@@ -4,10 +4,11 @@
 from datetime import date,datetime
 import os
 import xlrd,xlwt
+import AutoTest_keywords.config
 
 def read_excel():
 #文件位置
-    ExcelFile = xlrd.open_workbook(r'E:\Work\Workspace-python\AutoTest\TestCase.xlsx')
+    ExcelFile = xlrd.open_workbook(r'E:\\Work\\Workspace-python\\AutoTest_keywords\\src\\TestCase.xlsx')
 #获取目标EXCEL文件sheet名
     print ExcelFile.sheet_names()
 #------------------------------------
