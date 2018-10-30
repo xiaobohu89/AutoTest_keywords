@@ -5,8 +5,6 @@
 import os
 import time
 import unittest
-# import sys
-# sys.path.append('E:\\Work\\Workspace-python\\Test_guanaijiajia\\src\\commom')
 from AutoTest_keywords.commom import driver_configure
 from appium import webdriver
 
