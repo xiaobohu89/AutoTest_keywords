@@ -11,7 +11,7 @@ import time,os
 project_path = os.path.abspath(os.path.join(os.path.dirname(os.path.split(os.path.realpath(__file__))[0]), '.'))
 # print (project_path)
 # 测试用例代码存放路径（用于构建suite,注意该文件夹下的文件都应该以test开头命名）
-# test_case_path = project_path+"\\src\\test_case"
+test_case_path = project_path+"\\src\\test_case"
 # print u'日志路径：'+log_path
 #关键字文档路径
 # keywords_path = project_path + "\\src\\TestCase.xlsx"
