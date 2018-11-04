@@ -4,9 +4,12 @@
 
 import os
 import time
+import logging
 import unittest
-from AutoTest_keywords.commom import driver_configure
 from appium import webdriver
+from AutoTest_keywords.commom import driver_configure
+from AutoTest_keywords.commom import runlog
+from AutoTest_keywords.commom import ReadExcel
 
 class Test(unittest.TestCase):
     @classmethod
@@ -15,35 +18,15 @@ class Test(unittest.TestCase):
         cls.driver = dconfigur.get_driver()
 
     def test01(self):
-        u'''进入登录页面'''
-        self.driver.find_element_by_id("com.ithooks.android.ccbxreap:id/view_skip").click()
-        self.driver.find_element_by_id("com.ithooks.android.ccbxreap:id/btn_skip").click()
-        time.sleep(2)
-        self.driver.find_element_by_id("com.ithooks.android.ccbxreap:id/tv_login").click()
-        time.sleep(3)
-        # self.driver.find_element_by_id("com.ithooks.android.ccbxreap:id/toolbar_title").click()
-        self.driver.find_element_by_id("com.ithooks.android.ccbxreap:id/et_phone").send_keys('18100000012')
-        self.driver.find_element_by_id("com.ithooks.android.ccbxreap:id/et_pwd").send_keys('888888')
-        self.driver.get_screenshot_as_file('before_login.png')
-        self.driver.find_element_by_id("com.ithooks.android.ccbxreap:id/btn_login").click()
-        time.sleep(10)
-        self.driver.get_screenshot_as_file('after_login.png')
+        self.driver.find_element()
 
-    # def test02(self):
-    #     u'''页面返回键退出铃音设置页面'''
-    #     self.driver.find_element_by_id("com.tyuan.tangy:id/title").click()
-    #     time.sleep(5)
-    #     self.driver.find_element_by_id("com.tyuan.tangy:id/img_back").click()
-    #     time.sleep(5)
-    # def test03(self):
-    #     u'''系统返回键退出铃音设置页面'''
-    #     self.driver.find_element_by_id("com.tyuan.tangy:id/title").click()
-    #     time.sleep(5)
-    #     self.driver.press_keycode(4)         #系统返回键代码为4
-    #     time.sleep(5)
+
     def tearDown(self):
-        self.driver.quit()
-        # print "close app!"
+        if self.driver != '':
+            self.driver.quit()
+            print('The app is closed successfully, good job man!!!"')
+        else:
+            print('No app is running, fail to close app... ')
         time.sleep(5)
 if __name__ == '__main__':
     unittest.main()
