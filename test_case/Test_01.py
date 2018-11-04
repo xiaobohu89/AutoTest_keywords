@@ -17,7 +17,7 @@ class Test(unittest.TestCase):
         dconfigur = driver_configure.driver_configure()
         cls.driver = dconfigur.get_driver()
 
-    def test01(self):
+    def getExcel(self):
         self.driver.find_element()
 
 
@@ -28,5 +28,6 @@ class Test(unittest.TestCase):
         else:
             print('No app is running, fail to close app... ')
         time.sleep(5)
+
 if __name__ == '__main__':
     unittest.main()
